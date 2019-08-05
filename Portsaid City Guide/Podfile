@@ -1,0 +1,32 @@
+project 'Portsaid City Guide.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+target 'Portsaid City Guide' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Portsaid City Guide
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  pod 'Alamofire'  
+  pod 'SwiftyJSON' 
+  pod 'GoogleMaps' 
+  pod 'GooglePlaces'
+  pod 'GooglePlacesSearchController'
+  pod 'SVProgressHUD'
+  pod 'TextFieldEffects'
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+        config.build_settings.delete('CODE_SIGNING_ALLOWED')
+        config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    end
+  end
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  
+end
